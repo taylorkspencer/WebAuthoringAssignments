@@ -1,0 +1,11 @@
+/* Import the global stylesheet */
+@import url("style.css");
+
+/* Document styles */
+#navCanvas
+{
+	display: block;
+	height: 400px;
+	width: 1000px;
+	font: 80pt 'Breip';
+}

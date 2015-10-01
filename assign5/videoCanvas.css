@@ -1,0 +1,30 @@
+/* Import the global stylesheet */
+@import url("style.css");
+
+/* Document styles */
+#videoCanvas
+{
+	position: absolute;
+	display: block;
+	height: 720px;
+	width: 1280px;
+	top: 0px;
+	right: 0px;
+	-webkit-filter: blur(10px);
+	filter: url('filters.svg#blur');
+}
+.videoContainer
+{
+	position: absolute;
+	display: block;
+	height: 360px;
+	width: 640px;
+	top: 180px;
+	right: 320px;
+}
+#videoCanvasContainer
+{
+	position: relative;
+	display: block;
+	height: 720px;
+}

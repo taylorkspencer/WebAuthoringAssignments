@@ -1,0 +1,12 @@
+/* Import the global stylesheet */
+@import url("style.css");
+
+/* Document styles */
+#loremIpsumCanvas
+{
+	display: block;
+	height: 1200px;
+	width: 800px;
+	font: 12pt 'Old Standard', serif;
+	line-height: 200%;
+}

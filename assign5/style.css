@@ -1,0 +1,243 @@
+/* Fonts */
+@font-face
+{
+	font-family: 'Breip';
+	src: url('../shared/breip.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Raleway';
+	src: url('../shared/raleway.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Raleway Semi-Bold';
+	src: url('../shared/raleway-semibold.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Raleway Bold';
+	src: url('../shared/raleway-bold.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Cabin';
+	src: url('../shared/cabin.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Old Standard';
+	src: url('../shared/old-standard.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Inconsolata';
+	src: url('../shared/inconsolata.woff') format('woff');
+}
+
+/* Document styles */
+hr
+{
+	border: 1px solid #babdb6;
+	clear: both;
+}
+#header
+{
+	display: block;
+	font-family: 'Cabin', sans-serif;
+}
+#header .primary
+{
+	display: inline-block;
+	font: x-large 'Raleway Semi-Bold', sans-serif;
+	margin: 0px 0px 12pt 0px;
+}
+#header #authorInfoTable
+{
+	background-color: inherit;
+	font: medium 'Old Standard', serif;
+	border: 0px none;
+	border-collapse: collapse;
+	margin: 0px 0px 12pt 0px;
+}
+#header #authorInfoTable td
+{
+	padding: 0px 12pt 0px 0px;
+}
+#header .emailLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid blue;
+	vertical-align: middle;
+}
+#links
+{
+	display: block;
+	margin: 0px 10px 0px 0px;
+	float: left;
+	font: medium 'Raleway', sans-serif;
+	padding: 0px 0px 0px 0px;
+	background: linear-gradient(to right, rgb(83, 142, 213) 0%, #ffffff 100%);
+	background-color: rgb(83, 142, 213);
+	line-height: 3.5em;
+	width: 290px;
+	z-index: 10;
+}
+#links li
+{
+	padding: 0px 2em 0px .5em;
+	list-style-type: none;
+}
+#links li:hover
+{
+	background: linear-gradient(to right, rgb(125, 186, 240) 0%, #ffffff 100%);
+	background-color: rgb(125, 186, 240);
+}
+#links a
+{
+	color: white;
+	text-decoration: none;
+}
+#links a:hover
+{
+	text-decoration: underline;
+}
+#links a.here
+{
+	text-transform: uppercase;
+}
+#mainContents
+{
+	display: table-row;
+	width: expression(document.body.clientWidth-300);
+	width: calc(100% - 300px);
+	float: right;
+}
+#mainPhoto
+{
+	background-color: white;
+	padding: 0px 0px 10px 10px;
+	float: right;
+}
+#footer
+{
+	display: table;
+	width: 100%;
+	background: linear-gradient(to bottom, #4e9a06 0%, #376637 100%);
+	background-color: #42801e;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+	font: medium 'Cabin', sans-serif;
+	text-shadow: 1px 1px 1px gray;
+}
+#footer .address
+{
+	display: table-row;
+	margin: 5px 0px 5px 0px;
+	text-align: center;
+	list-style: none;
+	font: normal small-caps .8em/4em 'Old Standard', serif;
+	text-shadow: 1px 1px 1px black;
+}
+#footer .address li
+{
+	margin: 0px -5px 0px 10px;
+	display: inline;
+	list-style-type: none;
+}
+#footer .address li a
+{
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+}
+#footer .links
+{
+	display: table-row;
+	margin: 5px 0px 5px 0px;
+	float: right;
+	list-style: none;
+	font: smaller 'Cabin', sans-serif;
+	text-shadow: 1px 1px 1px black;
+}
+#footer .links li
+{
+	margin: 0px 10px 0px 0px;
+	display: inline;
+	list-style-type: none;
+}
+#footer .links li a
+{
+	text-decoration: none;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+}
+#footer .links li a:hover
+{
+	text-decoration: underline;
+	color: white;
+}
+#footer .copyNotices
+{
+	display: table-row;
+	float: left;
+	padding-left: 5px;
+	list-style: none;
+	font: smaller 'Cabin', sans-serif;
+	text-shadow: 1px 1px 1px black;
+}
+#footer .copyNotices li
+{
+	list-style-type: none;
+}
+#footer .copyNotices ul
+{
+	padding-left: 10px;
+	font-size: 90%;
+}
+#footer a
+{
+	color: #ffffff;
+}
+#footer .emailLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid white;
+	vertical-align: middle;
+	-webkit-filter: drop-shadow(1px 1px 1px black);
+	filter: url('filters.svg#darkShadow');
+}
+.heading
+{
+	background: linear-gradient(to bottom, #729fcf 0%, #ffffff 100%);
+	background-color: #729fcf;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+	font: large 'Raleway Bold', sans-serif;
+	margin: 0px 0px 12pt 0px;
+	letter-spacing: .4em;
+	text-indent: 1em;
+	text-shadow: 1px 1px 1px gray;
+}
+.subHeading
+{
+	background: linear-gradient(to bottom, #73d216 0%, #ffffff 100%);
+	background-color: #73d216;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+	font: bold large 'Cabin', sans-serif;
+	margin: 0px 0px 12pt 0px;
+	letter-spacing: .4em;
+	text-indent: 1em;
+	text-shadow: 1px 1px 1px gray;
+}
+.paragraph
+{
+	font: 12pt 'Old Standard', serif;
+	text-indent: 30px;
+	line-height: 200%;
+	margin: 12px 0px;
+}
+.code
+{
+	font-family: 'Inconsolata', monospace;
+}

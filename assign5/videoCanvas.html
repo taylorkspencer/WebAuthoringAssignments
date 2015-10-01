@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>LTEC 3260 - Assignment 5 - Video+Canvas</title>
+    <link rel="stylesheet" type="text/css" href="videoCanvas.css"/>
+    <script type="text/javascript" src="../shared/jsplus.js"></script>
+    <script type="text/javascript" src="videoCanvas.js"></script>
+  </head>
+  <body onLoad="drawVideoCanvas()">
+    <script type="text/javascript">
+      // Include the header pane
+      include("header.inc");
+    </script>
+    <hr/>
+    <script type="text/javascript">
+      // Include the links pane and its script (because scripts can't be executed in included files)
+      include("links.inc");
+      include("links.js");
+    </script>
+    <div id="mainContents">
+      <div class="heading">Video+Canvas</div>
+      <div id="videoCanvasContainer">
+        <canvas id="videoCanvas">Your browser does not support &lt;canvas&gt;, meaning that you cannot see the &lt;canvas&gt;-drawn video effects on the page.</canvas>
+        <div class="videoContainer" src="../shared/big-buck-bunny.webm,../shared/big-buck-bunny.mp4" height="360" width="640" preview="../shared/big-buck-bunny.png"></div>
+      </div>
+    </div>
+    <hr/>
+    <script type="text/javascript">
+      // Include the footer pane
+      include("footer.inc");
+    </script>
+  </body>
+</html>

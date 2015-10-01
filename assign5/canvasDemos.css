@@ -1,0 +1,22 @@
+/* Import the global stylesheet */
+@import url("style.css");
+
+/* Document styles */
+#twoDcircleCanvas
+{
+	display: block;
+	height: 125px;
+	width: 125px;
+	font: 20pt 'Raleway Semi-Bold', sans-serif;
+	line-height: 200%;
+	margin: 25px 0px 25px 0px;
+}
+#threeDcircleCanvas
+{
+	display: block;
+	height: 145px;
+	width: 145px;
+	font: 20pt 'Raleway Semi-Bold', sans-serif;
+	line-height: 200%;
+	margin: 25px 0px 25px 0px;
+}

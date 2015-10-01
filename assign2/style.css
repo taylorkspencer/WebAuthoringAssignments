@@ -1,0 +1,195 @@
+@font-face
+{
+	font-family: 'NobileRegular';
+	src: url('../shared/nobile.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'GentiumAlt Italic';
+	src: url('../shared/gentiumAlt-italic.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Purisa Medium';
+	src: url('../shared/purisa.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Ubuntu Light';
+	src: url('../shared/ubuntu-light.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Lobster Two Regular';
+	src: url('../shared/lobsterTwo-regular.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Breip Medium';
+	src: url('../shared/breip.woff') format('woff');
+}
+hr
+{
+	border: 1px solid #babdb6;
+	clear: both;
+}
+#header
+{
+	font: x-large sans-serif;
+	margin: 0px 0px 12pt 0px;
+}
+#links
+{
+	display: block;
+	margin: 0px 10px 0px 0px;
+	float: left;
+	font: medium sans-serif;
+	padding: 0px 0px 0px 0px;
+	background-color: rgb(125, 186, 240);
+	line-height: 3.5em;
+	width: 290px;
+}
+#links li:first-of-type
+{
+	text-transform: uppercase;
+}
+#links li
+{
+	padding: 0px 2em 0px .5em;
+	list-style-type: none;
+}
+#links li:hover
+{
+	background-color: rgb(83, 142, 213);
+}
+#links a
+{
+	color: white;
+	text-decoration: none;
+}
+#mainContents
+{
+	display: table-row;
+	width: expression(document.body.clientWidth-300);
+	width: calc(100% - 300px);
+	float: right;
+}
+#mainPhoto
+{
+	background-color: white;
+	padding: 0px 0px 10px 10px;
+	float: right;
+}
+#footer
+{
+	display: table;
+	width: 100%;
+	background-color: rgb(55, 102, 55);
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+	font: medium sans-serif;
+}
+#footer .address
+{
+	display: table-row;
+	margin: 5px 0px 5px 0px;
+	text-align: center;
+	list-style: none;
+	font: normal small-caps .8em/4em 'Times New Roman', Times, serif;
+}
+#footer .address li
+{
+	margin: 0px -5px 0px 10px;
+	display: inline;
+	list-style-type: none;
+}
+#footer .address li a
+{
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+}
+#footer .links
+{
+	display: table-row;
+	margin: 5px 0px 5px 0px;
+	float: right;
+	list-style: none;
+	font: smaller sans-serif;
+}
+#footer .links li
+{
+	margin: 0px 10px 0px 0px;
+	display: inline;
+	list-style-type: none;
+}
+#footer .links li a
+{
+	text-decoration: none;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+}
+#footer .links li a:hover
+{
+	text-decoration: underline;
+	color: white;
+}
+#footer .copyNotices
+{
+	display: table-row;
+	float: left;
+	padding-left: 5px;
+	list-style: none;
+	font: smaller sans-serif;
+}
+#footer .copyNotices li
+{
+	list-style-type: none;
+}
+#footer .copyNotices ul
+{
+	padding-left: 10px;
+	font-size: 90%;
+}
+#footer .telLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid white;
+	vertical-align: middle;
+}
+#footer .emailLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid white;
+	vertical-align: middle;
+}
+.heading
+{
+	background-color: #729fcf;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+	font: bold large sans-serif;
+	margin: 0px 0px 12pt 0px;
+	letter-spacing: .4em;
+	text-indent: 1em;
+}
+.subHeading
+{
+	background-color: #73d216;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+	font: bold large sans-serif;
+	margin: 0px 0px 12pt 0px;
+	letter-spacing: .4em;
+	text-indent: 1em;
+}
+section .subHeading+ul
+{
+	list-style: circle url('arrow.png') inside;
+}
+.paragraph
+{
+	font: small serif;
+	text-indent: 30px;
+	line-height: 200%;
+	margin: 12px 0px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>LTEC 3260 - Assignment 5 - Home</title>
+    <link rel="stylesheet" type="text/css" href="home.css"/>
+    <script type="text/javascript" src="../shared/jsplus.js"></script>
+    <script type="text/javascript" src="navCanvas.js"></script>
+  </head>
+  <body onLoad="drawNavCanvas()">
+    <script type="text/javascript">
+      // Include the header pane
+      include("header.inc");
+    </script>
+    <hr/>
+    <script type="text/javascript">
+      // Include the links pane and its script (because scripts can't be executed in included files)
+      include("links.inc");
+      include("links.js");
+    </script>
+    <div id="mainContents">
+      <canvas id="navCanvas">Your browser does not support &lt;canvas&gt;, meaning that you cannot use the &lt;canvas&gt; map to browse around the site.</canvas>
+    </div>
+    <hr/>
+    <script type="text/javascript">
+      // Include the footer pane
+      include("footer.inc");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+hr
+{
+	border: 1px solid #babdb6;
+}
+#heading
+{
+	font: x-large sans-serif;
+	margin: 0px 0px 12pt 0px;
+}
+#authorInfoTable
+{
+	border: 0px none;
+	border-collapse: collapse;
+	margin: 0px 0px 12pt 0px;
+}
+#authorInfoTable td
+{
+	padding: 0px 12pt 0px 0px;
+}
+#mainContents
+{
+	display: table-row;
+}
+#mainPhoto
+{
+	float: left;
+}
+#links
+{
+	display: table-row;
+	list-style: none;
+	padding-left: 0px;
+	font: medium sans-serif;
+}
+#footer
+{
+	display: table-row;
+	margin: 5px 0px 5px 0px;
+	float: right;
+	list-style: none;
+	font: medium sans-serif;
+}
+#footer li
+{
+	margin: 0px 0px 0px 10px;
+	display: inline;
+	list-style-type: none;
+}
+.subHeading
+{
+	font: large sans-serif;
+	margin: 0px 0px 12pt 0px;
+}
+.paragraph
+{
+	font: small serif;
+	text-indent: 30px;
+	line-height: 200%;
+	margin: 12px 0px;
+}

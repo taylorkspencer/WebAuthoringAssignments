@@ -1,0 +1,251 @@
+/* Fonts */
+@font-face
+{
+	font-family: 'Linden Hill';
+	src: url('../shared/linden-hill.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Inconsolata';
+	src: url('../shared/inconsolata.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Comfortaa';
+	src: url('../shared/comfortaa.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Comfortaa Bold';
+	src: url('../shared/comfortaa-bold.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Cantarell';
+	src: url('../shared/cantarell.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Cantarell Bold';
+	src: url('../shared/cantarell-bold.woff') format('woff');
+}
+
+/* Document styles */
+hr
+{
+	border: 1px solid #babdb6;
+	clear: both;
+}
+#header
+{
+	display: block;
+	font-family: 'Cantarell', sans-serif;
+}
+#header .primary
+{
+	display: inline-block;
+	font: x-large 'Comfortaa', sans-serif;
+	margin: 0px 0px 12pt 0px;
+}
+#header #authorInfoTable
+{
+	background-color: inherit;
+	font: medium 'Linden Hill', serif;
+	border: 0px none;
+	border-collapse: collapse;
+	margin: 0px 0px 12pt 0px;
+}
+#header #authorInfoTable td
+{
+	padding: 0px 12pt 0px 0px;
+}
+#header .emailLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid blue;
+	vertical-align: middle;
+}
+#links
+{
+	display: block;
+	margin: 0px 0px 0px 0px;
+	float: left;
+	font: medium 'Comfortaa', sans-serif;
+	padding: 0px 0px 0px 0px;
+	background-color: #6fd6da;
+	width: 100%;
+}
+#links li
+{
+	display: table-cell;
+	*display: inline;
+	padding: 2px 12px 2px 12px;
+	list-style-type: none;
+}
+#links a
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+#links a:hover
+{
+	text-decoration: underline;
+}
+#links a.here
+{
+	font-family: 'Comfortaa Bold', sans-serif;
+	font-weight: bold;
+}
+#mainContents
+{
+	display: block;
+	width: 100%;
+}
+#mainPhoto
+{
+	background-color: inherit;
+	padding: 0px 0px 10px 10px;
+	float: right;
+}
+#footer
+{
+	display: table;
+	width: 100%;
+	background-color: #204a87;
+	color: #e1f7ff;
+	font: medium 'Linden Hill', sans-serif;
+}
+#footer .address
+{
+	display: table-row;
+	margin: 5px 0px 5px 0px;
+	text-align: center;
+	list-style: none;
+	font: normal small-caps .8em/4em 'Linden Hill', serif;
+}
+#footer .address li
+{
+	margin: 0px -5px 0px 10px;
+	display: inline;
+	list-style-type: none;
+}
+#footer .address li a
+{
+	color: #e1f7ff;
+}
+#footer .links
+{
+	display: table-row;
+	margin: 5px 0px 5px 0px;
+	float: right;
+	list-style: none;
+	font: smaller 'Cantarell', sans-serif;
+}
+#footer .links li
+{
+	margin: 0px 10px 0px 0px;
+	display: inline;
+	list-style-type: none;
+}
+#footer .links li a
+{
+	text-decoration: none;
+	color: #e1f7ff;
+}
+#footer .links li a:hover
+{
+	text-decoration: underline;
+	color: #ffffff;
+}
+#footer .copyNotices
+{
+	display: table-row;
+	float: left;
+	padding-left: 5px;
+	list-style: none;
+	font: smaller 'Cantarell', sans-serif;
+}
+#footer .copyNotices li
+{
+	list-style-type: none;
+}
+#footer .copyNotices ul
+{
+	padding-left: 10px;
+	font-size: 90%;
+}
+#footer a
+{
+	color: #ffffff;
+}
+#footer .telLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid white;
+	vertical-align: middle;
+}
+#footer .emailLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid white;
+	vertical-align: middle;
+}
+.heading
+{
+	background-color: #729fcf;
+	color: #ffffff;
+	font: bold large 'Cantarell Bold', sans-serif;
+	margin: 0px 0px 12pt 0px;
+	letter-spacing: .4em;
+	text-indent: 1em;
+}
+.subHeading
+{
+	background-color: #6fd6da;
+	color: #e1f7ff;
+	font: bold large 'Cantarell Bold', sans-serif;
+	margin: 0px 0px 12pt 0px;
+	letter-spacing: .4em;
+	text-indent: 1em;
+}
+.paragraph
+{
+	font: medium 'Linden Hill', serif;
+	text-indent: 30px;
+	line-height: 200%;
+	margin: 12px 0px;
+}
+form .section
+{
+	display: block;
+	font: medium 'Linden Hill', serif;
+	margin: 12px 0px 12px 0px;
+}
+.editable
+{
+	display: block;
+	font: medium 'Linden Hill', serif;
+	color: #000000;
+	background-color: #ffffff;
+	border: inset 2px gray;
+	border-radius: 5px;
+	padding: 5px 5px 5px 5px;
+	height: 200px;
+	width: expression(document.body.clientWidth-15);
+	width: calc(100% - 15px);
+	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-resize: both;
+	resize: both;
+}
+.editable p
+{
+	text-indent: 30px;
+	line-height: 200%;
+	margin: 12px 0px;
+}
+.code
+{
+	font-family: 'Inconsolata', monospace;
+}

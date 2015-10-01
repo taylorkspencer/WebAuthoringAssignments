@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>LTEC 3260 - Assignment 5 - Lorem Ipsum Canvas</title>
+    <link rel="stylesheet" type="text/css" href="loremIpsumCanvas.css"/>
+    <script type="text/javascript" src="../shared/jsplus.js"></script>
+    <script type="text/javascript" src="loremIpsumCanvas.js"></script>
+  </head>
+  <body onLoad="drawLoremIpsumCanvas()">
+    <script type="text/javascript">
+      // Include the header pane
+      include("header.inc");
+    </script>
+    <hr/>
+    <script type="text/javascript">
+      // Include the links pane and its script (because scripts can't be executed in included files)
+      include("links.inc");
+      include("links.js");
+    </script>
+    <div id="mainContents">
+      <div class="heading">Lorem Ipsum Canvas</div>
+      <canvas id="loremIpsumCanvas" title="Lorem ipsum on a canvas, neat!">Your browser does not support &lt;canvas&gt;, meaning that you cannot see the &lt;canvas&gt;-drawn Lorem Ipsum text on this page. (Don't consider it a huge loss, though, it's just filler.)</canvas>
+    </div>
+    <hr/>
+    <script type="text/javascript">
+      // Include the footer pane
+      include("footer.inc");
+    </script>
+  </body>
+</html>

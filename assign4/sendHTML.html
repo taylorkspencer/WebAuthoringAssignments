@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>LTEC 3260 - Assignment 4 - Send HTML</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="../shared/jsplus.js"></script>
+    <script type="text/javascript" src="sendHTML.js"></script>
+  </head>
+  <body onLoad="startMirroring('sendHTMLform', 'htmlToSend', 'htmlToSendMirror')">
+    <div id="header">
+      <a name="top"></a>
+      <span class="primary">LTEC 3260 - Assignment 4</span>
+      <table id="authorInfoTable">
+        <tr>
+          <td>Taylor Spencer</td>
+          <td>LTEC 3260</td>
+          <td>Web Authoring</td>
+          <td>Assignment 4</td>
+        </tr>
+        <tr>
+          <td colspan="4">Email:&nbsp;<img src="../shared/header-email-link.png" alt="Email address protected from spambots" onClick="javascript:location.href='mailto:taylorkspencer@gmail.com'" class="emailLink"/></td>
+        </tr>
+      </table>
+      <ul id="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="sendHTML.html" class="here">Send HTML</a></li>
+        <li><a href="survey1.html">Survey 1</a></li>
+        <li><a href="survey2.html">Survey 2</a></li>
+      </ul>
+    </div>
+    <hr/>
+    <div id="mainContents">
+      <div class="heading">Send HTML</div>
+      <div class="paragraph">This page features a rich text box that can be used to send a string of HTML to the server.&nbsp; Type something in the box below and click Send HTML to send it to the server, or click Reset to restore it to its original contents.&nbsp; If you cannot type anything in the box below, please enable JavaScript.</div>
+      <form name="sendHTMLform" id="sendHTMLform" method="post" action="https://classes.lt.unt.edu/LTEC3260_custom_form.html">
+        <div class="editable" name="htmlToSend" id="htmlToSend">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&nbsp; Donec a diam lectus.&nbsp; Sed sit amet ipsum mauris.&nbsp; Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.&nbsp; Donec et mollis dolor.&nbsp; Praesent et diam eget libero egestas mattis sit amet vitae augue.&nbsp; Nam tincidunt congue enim, ut porta lorem lacinia consectetur.&nbsp; Donec ut libero sed arcu vehicula ultricies a non tortor.&nbsp; Lorem ipsum dolor sit amet, consectetur adipiscing elit.&nbsp; Aenean ut gravida lorem.&nbsp; Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.&nbsp; Pellentesque auctor nisi id magna consequat sagittis.&nbsp; Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet.&nbsp; Ut convallis libero in urna ultrices accumsan.&nbsp; Donec sed odio eros.&nbsp; Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus.&nbsp; Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&nbsp; In rutrum accumsan ultricies.&nbsp; Mauris vitae nisi at sem facilisis semper ac in est.</p>
+        </div>
+        <input type="hidden" name="htmlToSendMirror" id="htmlToSendMirror"/>
+        <input type="submit" value="Send HTML"/>
+        <input type="reset" value="Reset"/>
+      </form>
+    </div>
+    <div id="footer">
+      <ul class="address">
+        <li>Taylor K. Spencer</li>
+        <li>924 Hillside Drive</li>
+        <li>Copper Canyon, TX 75077</li>
+        <li>Phone:&nbsp;<img src="../shared/footer-tel-link.png" alt="Telephone number protected from spambots" onClick="javascript:location.href='tel:6827386598'" class="telLink"/></li>
+        <li>Email:&nbsp;<img src="../shared/footer-email-link.png" alt="Email address protected from spambots" onClick="javascript:location.href='mailto:taylorkspencer@gmail.com'" class="emailLink"/></li>
+      </ul>
+      <ul class="links">
+        <li><a href="../">Index</a></li>
+        <li><a href="#top">Return to Top</a></li>
+      </ul>
+      <ul class="copyNotices">
+        <li>This site uses <a href="http://gokercebeci.com/dev/f4player">f4player</a> for Flash playback, which is licensed under the GNU GPLv3 License.</li>
+        <li>This site uses the fonts Breip, Linden Hill, Inconsolata, Comfortaa, Comfortaa Bold, Cantarell, and Cantarell Bold.</li>
+        <ul>
+          <li>Breip is &copy; 2006 Alan Hussey and Adam Breipohl and is licensed under the SIL Open Font License.</li>
+          <li>Linden Hill is &copy; 2010 Barry Schwartz and is licensed under the MIT License.</li>
+          <li>Inconsolata is &copy; 2006 Raph Levien and is licensed under the SIL Open Font License.</li>
+          <li>Comfortaa and Comfortaa Bold are &copy; 2011 Johan Aakerlund and are licensed under the SIL Open Font License.</li>
+          <li>Cantarell and Cantarell Bold are &copy; 2009-2011 Understanding Limited and 2010-2012 Jakub Steiner and are licensed under the SIL Open Font License.</li>
+        </ul>
+        <li>This site uses Big Buck Bunny and Cygnus in its video and audio player, respectively.</li>
+        <ul>
+          <li>Big Buck Bunny is &copy; 2008 Blender Foundation and is licensed under the Creative Commons Attribution 3.0 License.</li>
+          <li>Cygnus is &copy; 2008 CyanogenMod, LLC. and is licensed under the Apache License.</li>
+        </ul>
+      </ul>
+    </div>
+  </body>
+</html>

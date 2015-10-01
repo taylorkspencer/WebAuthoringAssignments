@@ -1,0 +1,537 @@
+/* Fonts */
+@font-face
+{
+	font-family: 'DejaVu Sans';
+	src: url('../shared/dejavu-sans.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'DejaVu Sans ExtraLight';
+	src: url('../shared/dejavu-sans-extralight.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Nanum Myeongjo';
+	src: url('../shared/nanum-myeongjo.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Linux Libertine';
+	src: url('../shared/linux-libertine.woff') format('woff');
+}
+
+/* Animations */
+@-webkit-keyframes marquee
+{
+	from
+	{
+		margin-left: 100%;
+		width: 100%;
+	}
+	to
+	{
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+@keyframes marquee
+{
+	from
+	{
+		margin-left: 100%;
+		width: 100%;
+	}
+	to
+	{
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+
+/* Document styles */
+body
+{
+	background: linear-gradient(to bottom, #ffffff 0%, #e9b96e 100%);
+	background-color: #f4dcb7;
+}
+hr
+{
+	border: 1px solid rgba(143, 89, 2, .5);
+	*border: 1px solid #8f5902;
+	clear: both;
+}
+#header
+{
+	background: linear-gradient(to bottom, #ffffff 0%, #e9b96e 100%);
+	background-color: #f4dcb7;
+	padding: 0px 6pt 0px 6pt;
+}
+#header .primary
+{
+	display: inline-block;
+	font: x-large 'DejaVu Sans', sans-serif;
+	background-color: #e9b96e;
+	color: white;
+	text-shadow: 1px 1px 1px black;
+	margin: 0px 0px 10px 0px;
+	padding: 5px 15px 5px 15px;
+	border-radius: 15px;
+}
+#header #authorInfoTable
+{
+	background-color: rgba(255, 255, 255, .5);
+	*background-color: white;
+	font: medium 'Nanum Myeongjo', serif;
+	border: 0px none;
+	border-collapse: collapse;
+	margin: 10px 0px 10px 0px;
+}
+#header #authorInfoTable td
+{
+	padding: 0px 12pt 0px 0px;
+}
+#header .emailLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid blue;
+	vertical-align: middle;
+}
+/* To keep the absolute-positioned #links and #linksTitle */
+/* from messing up the document flow */
+#linksContainer
+{
+	/* Allow the navigation to extrude into the margins */
+	margin: 10px -4pt 10px -4pt;
+	height: 25px;
+	width: 100%;
+}
+#links
+{
+	display: table-cell;
+	position: absolute;
+	left: 120px;
+	right: 10px;
+	z-index: 0;
+	margin: 0px 0px 0px 0px;
+	font: medium 'DejaVu Sans ExtraLight';
+	padding: 0px 0px 0px 0px;
+	background: #d59b40 url('linksTitleShadow.png') repeat-y;
+	height: 25px;
+	overflow: hidden;
+}
+#links .marquee
+{
+	width: 100%;
+	-webkit-animation-name: marquee;
+	animation-name: marquee;
+	-webkit-animation-duration: 20s;
+	animation-duration: 20s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+#links .marquee:hover
+{
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+}
+#links li
+{
+	margin: 0px 0px 0px 10px;
+	display: inline;
+	list-style-type: none;
+}
+#links a
+{
+	color: white;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px gray;
+}
+#links a:hover
+{
+	text-decoration: underline;
+	text-shadow: 1px 1px 1px black;
+}
+/* Since a.here is used to denote links that point
+ to this page, they shouldn't act like links */
+#links a.here
+{
+	font-weight: bold;
+	cursor: default;
+}
+/* To override the previous a:hover declaration */
+#links a.here:hover
+{
+	text-decoration: none;
+	text-shadow: 1px 1px 1px gray;
+}
+#linksTitle
+{
+	display: table-cell;
+	position: absolute;
+	left: 10px;
+	z-index: 1;
+	width: 100px;
+	margin: 0px 0px 0px 0px;
+	font: large 'DejaVu Sans', sans-serif;
+	padding: 0px 0px 0px 10px;
+	background-color: #8f5902;
+	color: white;
+	height: 25px;
+	vertical-align: middle;
+	text-shadow: 1px 1px 1px black;
+}
+#mainContents
+{
+	display: table;
+	font-family: 'Nanum Myeongjo', serif;
+	background-color: rgba(255, 255, 255, .5);
+	*background-color: white;
+	margin: 10px 0px 10px 0px;
+	padding: 0px 6pt 0px 6pt;
+	width: expression(document.body.clientWidth-20);
+	width: calc(100% - 20px);
+}
+#mainContents .paragraph
+{
+	font: medium 'Nanum Myeongjo', serif;
+	text-indent: 30px;
+	line-height: 200%;
+	margin: 12px 0px;
+}
+/* Allow headings to extrude into the margins */
+#mainContents .heading,
+#mainContents .subHeading
+{
+	margin: 0px -4pt 12pt -4pt;
+}
+#mainPhoto
+{
+	padding: 0px 0px 10px 10px;
+	float: right;
+}
+#footer
+{
+	display: table;
+	width: 100%;
+	margin: 10px 0px 10px 0px;
+	background: linear-gradient(to bottom, #8f5902 0%, #6d3700 100%);
+	background-color: #7e4801;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+	font: medium 'DejaVu Sans', sans-serif;
+}
+#footer .address
+{
+	display: table-row;
+	margin: 5px 0px 5px 0px;
+	text-align: center;
+	list-style: none;
+	font: normal small-caps .8em/4em 'Linux Libertine', 'Times New Roman', Times, serif;
+}
+#footer .address li
+{
+	margin: 0px -5px 0px 10px;
+	display: inline;
+	list-style-type: none;
+}
+#footer .address li a
+{
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+}
+#footer .links
+{
+	display: table-row;
+	margin: 5px 0px 5px 0px;
+	float: right;
+	list-style: none;
+	font: smaller 'DejaVu Sans', sans-serif;
+}
+#footer .links li
+{
+	margin: 0px 10px 0px 0px;
+	display: inline;
+	list-style-type: none;
+}
+#footer .links li a
+{
+	text-decoration: none;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+}
+#footer .links li a:hover
+{
+	text-decoration: underline;
+	color: white;
+}
+#footer .copyNotices
+{
+	display: table-row;
+	float: left;
+	padding-left: 5px;
+	list-style: none;
+	font: smaller 'DejaVu Sans', sans-serif;
+}
+#footer .copyNotices li
+{
+	list-style-type: none;
+}
+#footer .copyNotices ul
+{
+	padding-left: 10px;
+	font-size: 90%;
+}
+#footer .telLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid white;
+	vertical-align: middle;
+}
+#footer .emailLink
+{
+	cursor: pointer;
+	border-bottom: 1px solid white;
+	vertical-align: middle;
+}
+.heading
+{
+	background-color: #8f5902;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+	font: bold large 'DejaVu Sans', sans-serif;
+	margin: 0px 0px 12pt 0px;
+	letter-spacing: .4em;
+	text-indent: 1em;
+}
+.subHeading
+{
+	background-color: #d59b40;
+	color: rgba(255, 255, 255, .8);
+	*color: white;
+	font: bold large 'DejaVu Sans', sans-serif;
+	margin: 0px 0px 12pt 0px;
+	letter-spacing: .4em;
+	text-indent: 1em;
+}
+.paragraph
+{
+	font: small serif;
+	text-indent: 30px;
+	line-height: 200%;
+	margin: 12px 0px;
+}
+.hspacer
+{
+	height: 100vh;
+	width: 1px;
+}
+.vspacer
+{
+	height: 1px;
+	width: 100vh;
+}
+.code
+{
+	font-family: monospace;
+}
+
+/* Styles for Page of Absolutes */
+.fixed
+{
+	position: fixed;
+	background-color: rgba(255, 255, 255, .5);
+	*background-color: white;
+}
+.absolute
+{
+	position: absolute;
+	background-color: rgba(255, 255, 255, .5);
+	*background-color: white;
+}
+.top
+{
+	top: 0px;
+}
+.bottom
+{
+	bottom: 0px;
+}
+.left
+{
+	left: 0px;
+}
+.right
+{
+	right: 0px;
+}
+.hcenter
+{
+	top: 25%;
+	bottom: 25%;
+}
+.vcenter
+{
+	left: 25%;
+	right: 25%;
+}
+.halfwidth
+{
+	width: 50%;
+}
+.front
+{
+	z-index: 10;
+}
+.back
+{
+	z-index: -10;
+}
+
+/* Styles for Box of Overflow */
+.box1
+{
+	background-color: white;
+	float: left;
+	clear: both;
+	overflow: auto;
+	width: 50%;
+	height: 100px;
+}
+.box2
+{
+	background-color: white;
+	float: right;
+	clear: both;
+	overflow: auto; /* Because not all browsers support overflow-x and overflow-y */
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width: 50%;
+	height: 100px;
+}
+.box3
+{
+	background-color: white;
+	float: left;
+	clear: both;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: 50%;
+	height: 100px;
+}
+
+/* Styles for Table Tableau */
+.figuresTable
+{
+	font: medium 'DejaVu Sans ExtraLight', sans-serif;
+	border-collapse: collapse;
+	margin: 0px 0px 10px 0px;
+}
+.figuresTable td
+{
+	background: white;
+	border: 2px solid #888a85;
+	box-shadow: inset -2px -2px rgba(186, 189, 182, .5);
+}
+.figuresTable tr:first-of-type td
+{
+	background: linear-gradient(to bottom, #c7efff 0%, #729fcf 100%);
+	background-color: #b6dfff;
+	border: 2px solid #3465a4;
+	font-weight: bold;
+	text-align: center !important;
+	box-shadow: inset -2px -2px rgba(32, 74, 135, .5);
+}
+.figuresTable td:nth-child(1)
+{
+	text-align: left;
+}
+.figuresTable td:nth-child(2)
+{
+	text-align: right;
+}
+.editableTable
+{
+	font: medium 'Linux Libertine', 'Times New Roman', Times, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid black;
+	margin: 0px 0px 10px 0px;
+}
+/* Change the border when the table is selected to indicate that it is editable */
+.editableTable td:active
+{
+	border: 1px dashed black;
+}
+.editableTable td:focus
+{
+	border: 1px dashed black;
+}
+.editableTable td:hover
+{
+	border: 1px dashed black;
+}
+.transformationTable td
+{
+	background-color: rgba(255, 255, 255, .5);
+	*background-color: white;
+	font: medium 'Nanum Myeongjo', serif;
+	border: 1px solid black;
+	transform: rotate(25deg);
+}
+.transformationTable:hover td
+{
+	background-color: white;
+	transform: rotate(-25deg);
+}
+
+/* Styles for Style Gallery */
+.blurryText
+{
+	color: transparent;
+	text-shadow: 2px 2px 2px gray;
+	margin: 25px 0px 25px 0px;
+}
+.gradientText
+{
+	background: -webkit-linear-gradient(top, transparent 0%, #000000 100%);
+	background: -o-linear-gradient(transparent, transparent);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin: 25px 0px 25px 0px;
+}
+.embossedText
+{
+	text-shadow: #ffffff 0px 1px 0px, #000000 0px -1px 0px;
+	margin: 25px 0px 25px 0px;
+}
+.twoDcircle
+{
+	border-radius: 50%;
+	background-color: blue;
+	color: white;
+	font: x-large 'DejaVu Sans', serif;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 125px;
+	height: 125px;
+	width: 125px;
+	margin: 25px 0px 25px 0px;
+}
+.threeDcircle
+{
+	border-radius: 50%;
+	background: linear-gradient(to bottom, #729fcf 0%, #204a87 100%);
+	background-color: #4975ab;
+	transform: rotate(-25deg);
+	box-shadow: 10px 10px 10px 0px #000000,
+		inset -10px -10px 10px #103976,
+		inset 10px 10px 10px #83afdf;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	font: x-large 'DejaVu Sans', serif;
+	text-shadow: #ffffff 0px 1px 0px, #000000 0px -1px 0px;
+	line-height: 125px;
+	height: 125px;
+	width: 125px;
+	margin: 25px 0px 25px 0px;
+}

@@ -1,0 +1,100 @@
+/* Import the global stylesheet */
+@import url("style.css");
+
+/* Fonts */
+@font-face
+{
+	font-family: 'Comfortaa';
+	src: url('../shared/comfortaa.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Comfortaa Bold';
+	src: url('../shared/comfortaa-bold.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Cantarell';
+	src: url('../shared/cantarell.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Cantarell Bold';
+	src: url('../shared/cantarell-bold.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'DejaVu Sans';
+	src: url('../shared/dejavu-sans.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'DejaVu Sans ExtraLight';
+	src: url('../shared/dejavu-sans-extralight.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'GentiumAlt Italic';
+	src: url('../shared/gentiumAlt-italic.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Lobster Two Regular';
+	src: url('../shared/lobsterTwo-regular.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Linden Hill';
+	src: url('../shared/linden-hill.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Linux Libertine';
+	src: url('../shared/linux-libertine.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Nanum Myeongjo';
+	src: url('../shared/nanum-myeongjo.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'NobileRegular';
+	src: url('../shared/nobile.woff') format('woff');
+}
+
+@font-face
+{
+	font-family: 'Purisa Medium';
+	src: url('../shared/purisa.woff') format('woff');
+}
+@font-face
+{
+	font-family: 'Ubuntu Light';
+	src: url('../shared/ubuntu-light.woff') format('woff');
+}
+
+/* Document styles */
+#mainContents .copyNotices
+{
+	display: table-row;
+	list-style: none;
+	font-family: 'Old Standard', sans-serif;
+}
+#mainContents .copyNotices li
+{
+	list-style-type: none;
+}
+#mainContents .copyNotices ul
+{
+	padding-left: 10px;
+	font-size: 90%;
+}
+#webFontSelectorCanvas
+{
+	display: block;
+	height: 1200px;
+	width: 100%;
+	font: 12pt serif;
+	line-height: 200%;
+}
