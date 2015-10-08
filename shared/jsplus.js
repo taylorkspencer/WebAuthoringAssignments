@@ -15,7 +15,7 @@ function include(includeSrc)
 			script.src = includeSrc;
 			script.type = includeMime;
 			// If the user gave two arguments, use the second argument as an ID
-			if (arguments[1])
+			if (isSet(arguments[1]))
 			{
 				script.id = arguments[1];
 			}
@@ -30,7 +30,7 @@ function include(includeSrc)
 			var script = document.createElement("script");
 			script.type = includeMime;
 			// If the user gave two arguments, use the second argument as an ID
-			if (arguments[1])
+			if (isSet(arguments[1]))
 			{
 				script.id = arguments[1];
 			}
@@ -67,7 +67,7 @@ function include(includeSrc)
 		link.type = includeMime;
 		link.rel = 'stylesheet';
 		// If the user gave two arguments, use the second argument as an ID
-		if (arguments[1])
+		if (isSet(arguments[1]))
 		{
 			script.id = arguments[1];
 		}
@@ -207,14 +207,28 @@ function getWindowInnerWidth()
 
 // Cross-browser alternative for querySelectorAll and document.all for getting
 // elements by class name
-function getElementsByClass(className)
+function getElementsByClass(className, parent)
 {
+	// To avoid breaking code relying on the old version of this function,
+	// set parent to document if it is not set
+	if (!isSet(parent))
+	{
+		parent = document;
+	}
+	
 	var toReturn;
 	// For most modern browsers
 	if (document.querySelectorAll)
 	{
 		// Get all the elements whose class name is equal to className from the page
-		toReturn = document.querySelectorAll('.'+className);
+		if (parent==null)
+		{
+			toReturn = document.querySelectorAll('.'+className);
+		}
+		else
+		{
+			toReturn = parent.querySelectorAll('.'+className);
+		}
 	}
 	// For IE7 and lower (which don't support querySelectorAll)
 	else if (document.all)
@@ -228,6 +242,52 @@ function getElementsByClass(className)
 			// If the class of the element is equal to className, add it to
 			// toReturn and increment elementIndex
 			if (document.all[tagIndex].className==className)
+			{
+				toReturn[elementIndex] = document.all[tagIndex];
+				elementIndex++;
+			}
+		}
+	}
+	return toReturn;
+}
+
+// Cross-browser alternative for querySelectorAll and document.all for getting
+// elements by ID name
+function getElementsByID(IDname, parent)
+{
+	// To avoid breaking code relying on the old version of this function,
+	// set parent to document if it is not set
+	if (!isSet(parent))
+	{
+		parent = document;
+	}
+	
+	var toReturn;
+	// For most modern browsers
+	if (document.querySelectorAll)
+	{
+		// Get all the elements whose ID name is equal to IDname from the page
+		if (parent==null)
+		{
+			toReturn = document.querySelectorAll('#'+IDname);
+		}
+		else
+		{
+			toReturn = parent.querySelectorAll('#'+IDname);
+		}
+	}
+	// For IE7 and lower (which don't support querySelectorAll)
+	else if (document.all)
+	{
+		toReturn = new Array();
+		
+		// Parse through all the elements on the web page
+		var elementIndex = 0;
+		for (var tagIndex=0; tagIndex<document.all.length; tagIndex++)
+		{
+			// If the ID of the element is equal to IDname, add it to
+			// toReturn and increment elementIndex
+			if (document.all[tagIndex].id==IDname)
 			{
 				toReturn[elementIndex] = document.all[tagIndex];
 				elementIndex++;
@@ -387,95 +447,107 @@ function getFileType(filePath)
 	{
 		// Return a file type based on the file path's extension
 		// For binary files
-		if ((filePath.match(/.exe$/))||(filePath.match(/.com$/))||(filePath.match(/.bin$/)))
+		if ((filePath.match(/[.]exe$/))||(filePath.match(/[.]com$/))||(filePath.match(/[.]bin$/)))
 		{
 			return 'binary';
 		}
 		
 		// For script files
-		if (filePath.match(/.js$/))
+		if (filePath.match(/[.]js$/))
 		{
 			return 'script';
 		}
-		else if (filePath.match(/.glsl$/))
+		else if (filePath.match(/[.]glsl$/))
 		{
 			return 'script';
 		}
 		
 		// For style files
-		if (filePath.match(/.css$/))
+		if (filePath.match(/[.]css$/))
 		{
 			return 'style';
 		}
 		
 		// For image files
-		if (filePath.match(/.gif$/))
+		if (filePath.match(/[.]gif$/))
 		{
 			return 'image';
 		}
-		else if ((filePath.match(/.jpeg$/))||(filePath.match(/.jpg$/)))
+		else if ((filePath.match(/[.]jpeg$/))||(filePath.match(/[.]jpg$/)))
 		{
 			return 'image';
 		}
-		else if (filePath.match(/.png$/))
+		else if (filePath.match(/[.]png$/))
 		{
 			return 'image';
 		}
-		else if (filePath.match(/.svg$/))
+		else if (filePath.match(/[.]svg$/))
 		{
 			return 'image';
 		}
-		else if (filePath.match(/.webp$/))
+		else if (filePath.match(/[.]webp$/))
 		{
 			return 'image';
 		}
 		
 		// For audio files
-		if (filePath.match(/.aac$/))
+		if (filePath.match(/[.]aac$/))
 		{
 			return 'audio';
 		}
-		else if (filePath.match(/.flac$/))
+		else if (filePath.match(/[.]flac$/))
 		{
 			return 'audio';
 		}
-		else if (filePath.match(/.m4a$/))
+		else if (filePath.match(/[.]m4a$/))
 		{
 			return 'audio';
 		}
-		else if (filePath.match(/.mp3$/))
+		else if (filePath.match(/[.]mp3$/))
 		{
 			return 'audio';
 		}
-		else if ((filePath.match(/.ogg$/))||(filePath.match(/.ogx$/)))
+		else if ((filePath.match(/[.]ogg$/))||(filePath.match(/[.]ogx$/)))
 		{
 			return 'audio';
 		}
-		else if (filePath.match(/.oga$/))
+		else if (filePath.match(/[.]oga$/))
 		{
 			return 'audio';
 		}
 		
 		// For video files
-		if (filePath.match(/.flv$/))
+		if (filePath.match(/[.]flv$/))
 		{
 			return 'video';
 		}
-		else if ((filePath.match(/.mpeg$/))||(filePath.match(/.mpg$/)))
+		else if ((filePath.match(/[.]mpeg$/))||(filePath.match(/[.]mpg$/)))
 		{
 			return 'video';
 		}
-		else if ((filePath.match(/.mp4$/))||(filePath.match(/.m4v$/)))
+		else if ((filePath.match(/[.]mp4$/))||(filePath.match(/[.]m4v$/)))
 		{
 			return 'video';
 		}
-		else if (filePath.match(/.ogv$/))
+		else if (filePath.match(/[.]ogv$/))
 		{
 			return 'video';
 		}
-		else if (filePath.match(/.webm$/))
+		else if (filePath.match(/[.]webm$/))
 		{
 			return 'video';
+		}
+		
+		// For document files
+		if (filePath.match(/[.]pdf$/))
+		{
+			return 'document';
+		}
+		
+		// For text files
+		if ((filePath.match(/[.]html$/))||(filePath.match(/[.]htm$/)))
+		{
+			return 'text';
 		}
 		
 		// If the file type could not be recognized by the extension, assume plain text
@@ -500,7 +572,7 @@ function getMimeType(filePath)
 		if (fileType=='binary')
 		{
 			// Return a MIME type based on the file path's extension
-			if ((filePath.match(/.exe$/))||(filePath.match(/.com$/))||(filePath.match(/.bin$/)))
+			if ((filePath.match(/[.]exe$/))||(filePath.match(/[.]com$/))||(filePath.match(/[.]bin$/)))
 			{
 				return 'application/binary';
 			}
@@ -513,11 +585,11 @@ function getMimeType(filePath)
 		else if (fileType=='script')
 		{
 			// Return a MIME type based on the file path's extension
-			if (filePath.match(/.js$/))
+			if (filePath.match(/[.]js$/))
 			{
 				return 'text/javascript';
 			}
-			else if (filePath.match(/.glsl$/))
+			else if (filePath.match(/[.]glsl$/))
 			{
 				return 'application/x-shader';
 			}
@@ -529,7 +601,7 @@ function getMimeType(filePath)
 		// For style files
 		else if (fileType=='style')
 		{
-			if (filePath.match(/.css$/))
+			if (filePath.match(/[.]css$/))
 			{
 				return 'text/css';
 			}
@@ -542,23 +614,23 @@ function getMimeType(filePath)
 		else if (fileType=='image')
 		{
 			// Return a MIME type based on the file path's extension
-			if (filePath.match(/.gif$/))
+			if (filePath.match(/[.]gif$/))
 			{
 				return 'image/gif';
 			}
-			else if ((filePath.match(/.jpeg$/))||(filePath.match(/.jpg$/)))
+			else if ((filePath.match(/[.]jpeg$/))||(filePath.match(/[.]jpg$/)))
 			{
 				return 'image/jpeg';
 			}
-			else if (filePath.match(/.png$/))
+			else if (filePath.match(/[.]png$/))
 			{
 				return 'image/png';
 			}
-			else if (filePath.match(/.svg$/))
+			else if (filePath.match(/[.]svg$/))
 			{
 				return 'image/svg+xml';
 			}
-			else if (filePath.match(/.webp$/))
+			else if (filePath.match(/[.]webp$/))
 			{
 				return 'image/webp';
 			}
@@ -571,27 +643,27 @@ function getMimeType(filePath)
 		else if (fileType=='audio')
 		{
 			// Return a MIME type based on the file path's extension
-			if (filePath.match(/.aac$/))
+			if (filePath.match(/[.]aac$/))
 			{
 				return 'audio/aac';
 			}
-			else if (filePath.match(/.flac$/))
+			else if (filePath.match(/[.]flac$/))
 			{
 				return 'audio/flac';
 			}
-			else if (filePath.match(/.m4a$/))
+			else if (filePath.match(/[.]m4a$/))
 			{
 				return 'audio/mp4';
 			}
-			else if (filePath.match(/.mp3$/))
+			else if (filePath.match(/[.]mp3$/))
 			{
 				return 'audio/mpeg';
 			}
-			else if ((filePath.match(/.ogg$/))||(filePath.match(/.ogx$/)))
+			else if ((filePath.match(/[.]ogg$/))||(filePath.match(/[.]ogx$/)))
 			{
 				return 'application/ogg';
 			}
-			else if (filePath.match(/.oga$/))
+			else if (filePath.match(/[.]oga$/))
 			{
 				return 'audio/ogg';
 			}
@@ -604,23 +676,23 @@ function getMimeType(filePath)
 		else if (fileType=='video')
 		{
 			// Return a MIME type based on the file path's extension
-			if (filePath.match(/.flv$/))
+			if (filePath.match(/[.]flv$/))
 			{
 				return 'video/x-flv';
 			}
-			else if ((filePath.match(/.mpeg$/))||(filePath.match(/.mpg$/)))
+			else if ((filePath.match(/[.]mpeg$/))||(filePath.match(/[.]mpg$/)))
 			{
 				return 'video/mpeg';
 			}
-			else if ((filePath.match(/.mp4$/))||(filePath.match(/.m4v$/)))
+			else if ((filePath.match(/[.]mp4$/))||(filePath.match(/[.]m4v$/)))
 			{
 				return 'video/mp4';
 			}
-			else if (filePath.match(/.ogv$/))
+			else if (filePath.match(/[.]ogv$/))
 			{
 				return 'video/ogg';
 			}
-			else if (filePath.match(/.webm$/))
+			else if (filePath.match(/[.]webm$/))
 			{
 				return 'video/webm';
 			}
@@ -629,10 +701,29 @@ function getMimeType(filePath)
 				return 'video';
 			}
 		}
+		// For document files
+		else if (fileType=='document')
+		{
+			if (filePath.match(/[.]pdf$/))
+			{
+				return 'application/pdf';
+			}
+			else
+			{
+				return 'document';
+			}
+		}
 		// For text
 		else if (fileType=='text')
 		{
-			return 'text/plain';
+			if ((filePath.match(/[.]html$/))||(filePath.match(/[.]htm$/)))
+			{
+				return 'text/html';
+			}
+			else
+			{
+				return 'text/plain';
+			}
 		}
 		// If the file type could not be recognized by the extension, assume binary data
 		else
@@ -645,4 +736,61 @@ function getMimeType(filePath)
 		// If the file path is empty, return an empty string
 		return '';
 	}
+}
+
+// Returns the GET argument for the parameter given
+function _GET(parameter)
+{
+	// Retrieve the arguments after the URL
+	var GET_data = location.search;
+	
+	// Determine if the requested parameter is defined in the GET arguments
+	var paramStart = GET_data.match(new RegExp("[\?\&]"+parameter+"=."));
+	if (paramStart!=null)
+	{
+		// If the requested parameter is found, return its contents
+		var paramStartPoint = GET_data.indexOf(paramStart[0])+paramStart[0].length-1;
+		
+		var paramEnd = GET_data.match(new RegExp("[\?\&]"+parameter+"=(.+?)(?=\&|\#|$)"));
+		var paramEndPoint = GET_data.indexOf(paramEnd[0])+paramEnd[0].length;
+		var paramData = GET_data.substr(paramStartPoint, (paramEndPoint-paramStartPoint));
+		return paramData;
+	}
+}
+
+// Checks whether the variable has been defined
+function isSet(variable)
+{
+	// If the type of the variable is undefined, return false
+	if ((typeof variable)=='undefined')
+	{
+		return false;
+	}
+	// Otherwise return true
+	else
+	{
+		return true;
+	}
+}
+
+// Checks whether the variable is an array (including associative arrays)
+function isArray(variable)
+{
+	// If the type of the variable is array or object (for associative arrays), return false
+	if (((typeof variable)=='array')||((typeof variable)=='object'))
+	{
+		return true;
+	}
+	// Otherwise return true
+	else
+	{
+		return false;
+	}
+}
+
+// Returns the length of a string
+// Used for newly defined strings
+function strlen(string)
+{
+	return string.length;
 }
