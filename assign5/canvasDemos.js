@@ -40,6 +40,17 @@ function draw2dCircleCanvas()
 	// Check to see if the browser supports <canvas> before continuing
 	if (context)
 	{
+		// Hide the <nocanvas> element
+		var twoDcircleNocanvas = document.getElementsByTagName("nocanvas")[0];
+		try
+		{
+			twoDcircleNocanvas.style.display = "none";
+		}
+		catch (MissingSupport)
+		{
+			// Do nothing
+		}
+		
 		// Set the font equal to the font for the canvas
 		context.font = window.getComputedStyle(twoDcircleCanvas).fontStyle+' '+
 			window.getComputedStyle(twoDcircleCanvas).fontVariant+' '+
@@ -109,6 +120,17 @@ function draw3dCircleCanvas()
 	// Check to see if the browser supports <canvas> before continuing
 	if (context)
 	{
+		// Hide the <nocanvas> element
+		var threeDcircleNocanvas = document.getElementsByTagName("nocanvas")[1];
+		try
+		{
+			threeDcircleNocanvas.style.display = "none";
+		}
+		catch (MissingSupport)
+		{
+			// Do nothing
+		}
+		
 		// Set the font equal to the font for the canvas
 		context.font = window.getComputedStyle(threeDcircleCanvas).fontStyle+' '+
 			window.getComputedStyle(threeDcircleCanvas).fontVariant+' '+

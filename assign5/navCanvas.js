@@ -33,6 +33,17 @@ function drawNavCanvas()
 	// Check to see if the browser supports <canvas> before continuing
 	if (context)
 	{
+		// Hide the <nocanvas> element
+		var navNocanvas = document.getElementsByTagName("nocanvas")[0];
+		try
+		{
+			navNocanvas.style.display = "none";
+		}
+		catch (MissingSupport)
+		{
+			// Do nothing
+		}
+		
 		// Set the color equal to the color for the canvas
 		context.fillStyle = window.getComputedStyle(navCanvas).color;
 		

@@ -39,6 +39,17 @@ function drawVideoCanvas()
 	// Check to see if the browser supports <canvas> before continuing
 	if (context)
 	{
+		// Hide the <nocanvas> element
+		var videoNocanvas = document.getElementsByTagName("nocanvas")[0];
+		try
+		{
+			videoNocanvas.style.display = "none";
+		}
+		catch (MissingSupport)
+		{
+			// Do nothing
+		}
+		
 		// Check to see if we have an HTML5 video element
 		var videoElement = getElementsByClass("videoContainer")[0].getElementsByTagName("video")[0];
 		if (videoElement)

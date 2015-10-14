@@ -152,6 +152,17 @@ function drawWebFontSelectorCanvas()
 	// Check to see if the browser supports <canvas> before continuing
 	if (context)
 	{
+		// Hide the <nocanvas> element
+		var webFontSelectorNocanvas = document.getElementsByTagName("nocanvas")[0];
+		try
+		{
+			webFontSelectorNocanvas.style.display = "none";
+		}
+		catch (MissingSupport)
+		{
+			// Do nothing
+		}
+		
 		// Clear the previous contents of the canvas
 		context.clearRect(0, 0, webFontSelectorCanvas.width, webFontSelectorCanvas.height);
 		
